@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
@@ -23,3 +23,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profiles', [App\Http\Controllers\ProfileController::class, 'index'])->name('profiles');
+Route::get('/profile/{profile}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile');
